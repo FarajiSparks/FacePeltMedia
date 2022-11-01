@@ -1,0 +1,42 @@
+body, main{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    background-color: black;
+}
+
+main{
+    background-image: url(https://i.ibb.co/2d9MN7P/DSC-0339.jpg);
+    background-size: cover;
+    background-position: 0%;
+    position:relative;
+    z-index: 2;
+}
+
+#nav-toggle{
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    z-index: 3;
+    left:50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    background-color: aqua;
+    border: none;
+    border-radius: 5rem;
+    outline: none;
+    box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+    cursor: pointer;
+    transition: transform, background-color;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+}
+
+#nav-toggle:hover {
+    transform: translateX(-50%) scale(1.04);
+}
+
+#nav-toggle:active{
+    transform:translateX(-50%) scale(0.96);
+}
+
