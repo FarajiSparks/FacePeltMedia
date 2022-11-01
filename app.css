@@ -40,3 +40,26 @@ main{
     transform:translateX(-50%) scale(0.96);
 }
 
+#nav-toggle > i{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate (-50%, -50%) scale(0.9);
+    color: rgb(88, 49, 185);
+    font-size: 1.75rem;
+    opacity: 0;
+    transition: transform, opacity;
+    transition-timing-function:ease;
+    transition-duration: 400ms;
+}
+
+body:not([data-nav="true"]) > #nav-toggle:hover > .open{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+body[data-nav="true"] > #nav-toggle > .close{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
