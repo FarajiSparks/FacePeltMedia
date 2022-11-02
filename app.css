@@ -11,6 +11,7 @@ main{
     background-position: 0%;
     position:relative;
     z-index: 2;
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
 }
 
 #nav-toggle{
@@ -63,3 +64,49 @@ body[data-nav="true"] > #nav-toggle > .close{
     transform: translate(-50%, -50%) scale(1);
 }
 
+body[data-nav="true"] > main{
+    transform: translateY(-60%);
+    transition-timing-function:ease;
+    transition-duration: 400ms;
+}
+
+body[data-nav ="true"] > nav > #nav{
+    transform: translate(0%) scale(1);
+}
+
+#nav{
+    display: flex;
+    gap:clamp(1rem, 2vh, 2rem);
+    margin-top: clamp(2rem, 2vw, 3rem);
+    padding: 0rem clamp(1rem, 2vw, 2rem);
+    transform: translateY(70%) scale(0.9);
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+}
+
+#nav > .nav-link{
+    text-decoration: none;
+}
+
+#nav > .nav-link > .nav-link-label{
+    color: snow;
+    font-size: 1.5rem;
+    margin: 0rem;
+    text-transform: uppercase;
+}
+
+#nav > .nav-link > .nav-link-image{
+    width: max(20vw, 400px);
+    aspect-ratio: 1.8 / 1;
+    border-radius:0.5rem;
+    margin-top: 0.75rem;
+    object-fit: cover;
+}
+
+nav{
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+    z-index: 1;
+}
