@@ -1,10 +1,18 @@
+@font-face {
+    font-family: "Chinook";
+    src: url("font/Chinook-Freebie.otf");
+}
+
+
 body, main{
     height: 100vh;
     width: 100vw;
     margin: 0px;
     background-color: black;
+    overflow: hidden;
 }
 
+/*Background image styling*/
 main{
     background-image: url(https://i.ibb.co/2d9MN7P/DSC-0339.jpg);
     background-size: cover;
@@ -14,6 +22,7 @@ main{
     transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
 }
 
+/*Main button styling*/
 #nav-toggle{
     height: 5rem;
     width: 5rem;
@@ -33,14 +42,17 @@ main{
     transition-duration: 400ms;
 }
 
+/*Hover effect for nav button to increase size slightly on mouse over*/
 #nav-toggle:hover {
     transform: translateX(-50%) scale(1.04);
 }
 
+/*Hover effect for nav button to decrease size on mouse over*/
 #nav-toggle:active{
     transform:translateX(-50%) scale(0.96);
 }
 
+/*Menu and X button styling and transition behaviour*/
 #nav-toggle > i{
     position: absolute;
     left: 50%;
@@ -54,15 +66,18 @@ main{
     transition-duration: 400ms;
 }
 
+/*Menu icon behaviour on mouse over */
 body:not([data-nav="true"]) > #nav-toggle:hover > .open{
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
 
+/*X icon behaviour on click*/
 body[data-nav="true"] > #nav-toggle > .close{
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+
 
 body[data-nav="true"] > main{
     transform: translateY(-60%);
@@ -70,17 +85,25 @@ body[data-nav="true"] > main{
     transition-duration: 400ms;
 }
 
+/*Nav behaviour on button click open*/
 body[data-nav ="true"] > nav > #nav{
     transform: translate(0%) scale(1);
 }
 
+/*Nav styling for row*/
 #nav{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     gap:clamp(1rem, 2vh, 2rem);
     margin-top: clamp(2rem, 2vw, 3rem);
     padding: 0rem clamp(1rem, 2vw, 2rem);
     transform: translateY(70%) scale(0.9);
     transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    overflow: hidden;
 }
 
 #nav > .nav-link{
@@ -89,17 +112,26 @@ body[data-nav ="true"] > nav > #nav{
 
 #nav > .nav-link > .nav-link-label{
     color: snow;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 0rem;
+    font-family: "Chinook", sans-serif;
     text-transform: uppercase;
+    
 }
 
 #nav > .nav-link > .nav-link-image{
-    width: max(20vw, 400px);
+    width: max(10vw, 350px);
     aspect-ratio: 1.8 / 1;
     border-radius:0.5rem;
     margin-top: 0.75rem;
     object-fit: cover;
+}
+
+#nav > .nav-link > .nav-link-image:hover{
+    transform: scale(105%);
+    transition-timing-function: ease forwards;
+    transition-duration: 400ms;
+  
 }
 
 nav{
@@ -109,4 +141,22 @@ nav{
     left:0px;
     bottom: 0px;
     z-index: 1;
+}
+
+/*Media Query Events*/
+/*Menu */
+@media screen and (max-width:842px){
+
+    body[data-nav="true"] > main{
+        transform: translateY(-90%);
+    }
+
+    nav{
+        height: 90vh;
+    }
+
+    #nav > .nav-link > .nav-link-image{
+        width:40%;
+        height: 50%;
+    }
 }
