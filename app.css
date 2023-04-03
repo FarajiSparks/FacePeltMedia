@@ -42,7 +42,7 @@ main{
     transition-duration: 400ms;
 }
 
-/*Hover effect for nav button to increase size slightly on mouse over*/
+/*Hover effect for nav button to stay in position*/
 #nav-toggle:hover {
     transform: translateX(-50%) scale(1.04);
 }
@@ -64,6 +64,15 @@ main{
     transition: transform, opacity;
     transition-timing-function:ease;
     transition-duration: 400ms;
+}
+
+.parallax{
+
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*Menu icon behaviour on mouse over */
@@ -130,8 +139,7 @@ body[data-nav ="true"] > nav > #nav{
 #nav > .nav-link > .nav-link-image:hover{
     transform: scale(105%);
     transition-timing-function: ease forwards;
-    transition-duration: 400ms;
-  
+    transition-duration: 400ms;  
 }
 
 nav{
@@ -143,9 +151,22 @@ nav{
     z-index: 1;
 }
 
+
+.container-main{
+    display:grid;       
+    grid-template-columns:repeat(2,1fr)
+}
+
+.row-one{
+    padding:1px
+}
 /*Media Query Events*/
 /*Menu */
 @media screen and (max-width:842px){
+
+    main{
+        background-position: center ;
+    }
 
     body[data-nav="true"] > main{
         transform: translateY(-90%);
@@ -153,10 +174,17 @@ nav{
 
     nav{
         height: 90vh;
+        display: flex;
+    }
+
+    #nav > .nav-link{
+        width:50%
     }
 
     #nav > .nav-link > .nav-link-image{
         width:40%;
-        height: 50%;
+        height: 60%;
     }
 }
+
+ 
