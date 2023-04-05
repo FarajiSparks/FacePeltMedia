@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />            
+    <link rel="stylesheet" href="app.css">
+     <link rel="stylesheet" href="home.css">
+
+    <script defer src="script.js"></script>
+    <title>Gallery</title>
+</head>
+<body data-nav="false">
+    <main>
+        <div class="container-main">
+            <div class="row-one">
+                <img src="https://i.ibb.co/Rvg3trW/DSC-0835.jpg" class="parallax" alt="">
+                <img src="https://i.ibb.co/Rvg3trW/DSC-0835.jpg" class="parallax" alt="">
+                <img src="https://i.ibb.co/Rvg3trW/DSC-0835.jpg" class="parallax" alt="">
+            </div>
+            <div class="row-one">
+                <img src="https://i.ibb.co/Rvg3trW/DSC-0835.jpg" class="parallax" alt="">
+                <img src="https://i.ibb.co/Rvg3trW/DSC-0835.jpg" class="parallax" alt="">
+                <img src="https://i.ibb.co/Rvg3trW/DSC-0835.jpg" class="parallax" alt="">
+            </div>
+        </div>
+        <div class="context-main">
+            
+
+        </div>
+    </main>
+     <nav >
+       <div id="nav">
+           <a class="nav-link" href="/index.html">
+               <h2 class="nav-link-label rubik-font">Home</h2>
+               <img class="nav-link-image" src="https://i.ibb.co/QYpPgz9/Puerto-Seco-12.jpg" alt="home-image">
+           </a>
+           <a class="nav-link" href="/aboutMe.html">
+               <h2 class="nav-link-label rubik-font">About Me</h2>
+               <img class="nav-link-image" src="https://i.ibb.co/MfhH9Gp/DSC-0349.jpg" alt="picture-of-brandon">
+           </a>
+           <a class="nav-link" href="/gallery.html">
+               <h2 class="nav-link-label rubik-font">Gallery</h2>
+               <img class="nav-link-image" src="https://i.ibb.co/k6rYy8X/Puerto-Seco-53-5.jpg" alt="gallery-images">
+           </a>
+           <a class="nav-link" href="/contact.html">
+               <h2 class="nav-link-label rubik-font">Contact</h2>
+               <img class="nav-link-image" src="https://i.ibb.co/SPdF6dt/DSC-0363.jpg" alt="picture of brandon">
+
+           </a>
+       </div>
+   </nav>
+   
+       <button id="nav-toggle" type="button" class="pulse" onclick="toggleNav()">
+           <i class="open fa-solid fa-bars-staggered"></i>
+           <i class="close fa-solid fa-xmark"></i>
+       </button>
+
+</body>
+<script>
+   const toggleNav = () =>{
+       document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true"
+   }
+   let parallax = document.querySelector(".parallax");
+
+    window.addEventListener("scroll", function() {
+     let offset = window.pageYOffset;
+        parallax.style.backgroundPositionY = offset * 0.7 + "px";
+});
+</script>
+</html>
