@@ -18,5 +18,15 @@
     width: 50%;
     float: left;
     height: 100vh;
-    background-color:aquamarine ;
+    background-color:rgb(127, 178, 255) ;
 }
+
+#scrolling-column-1 {
+    height: 100vh; /* set the height of the column */
+    overflow-y: scroll; /* enable vertical scrolling */
+  }
+
+  #scrolling-column-2 {
+    height: 100vh; /* set the height of the column */
+    overflow-y: scroll; /* enable vertical scrolling */
+  }

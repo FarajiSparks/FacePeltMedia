@@ -3,6 +3,9 @@
     src: url("font/Chinook-Freebie.otf");
 }
 
+*::-webkit-scrollbar {
+    display: none;
+  }
 
 body, main{
     height: 100vh;
@@ -31,7 +34,7 @@ main{
     left:50%;
     bottom: 3rem;
     transform: translateX(-50%);
-    background-color: aqua;
+    background-color: #94C5CC;
     border: none;
     border-radius: 5rem;
     outline: none;

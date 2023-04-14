@@ -21,3 +21,17 @@ if(links){
         }
     })
 }
+/*Customizable scroll speeds for each row function*/
+const scrollSpeed = (num, scrollAmt, scrollDel) =>{
+    let scrollingColumn = document.getElementById(`scrolling-column-${num}`);
+    let scrollAmount = scrollAmt; // amount of pixels to scroll
+    let scrollDelay = scrollDel; // time in milliseconds between each scroll
+
+    setInterval(function() {
+        scrollingColumn.scrollTop += scrollAmount;
+        }, scrollDelay);
+}
+
+
+scrollSpeed(1, 2, 50);
+scrollSpeed(2, 3, 60);
